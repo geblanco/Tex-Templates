@@ -28,6 +28,7 @@ install:
 	$(INSTALL) -m0755 $(TEMPLEATES_DIR)/* $(PATH_TEMPLATES)
 
 uninstall:
-	rm -rf $(PREFIX)
+	rm -rf $(PATH_TEMPLATES)
+	rm -rf $(PATH_EXEC)
 
 .PHONY: all install uninstall
