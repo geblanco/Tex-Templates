@@ -4,8 +4,7 @@ doc_class=$1; shift
 title=$1; shift
 author=$1; shift
 
-tpl1='\documentclass{beamer}
-\usepackage{pgfpages}
+tpl1='\usepackage{pgfpages}
 \usepackage{hyperref}
 
 %\setbeameroption{show only notes}
