@@ -65,5 +65,9 @@ if [[ -f "${cwd}/templates/${doc_class}.sh" ]]; then
 	template="${cwd}/templates/${doc_class}.sh"
 fi
 
+if [[ -d "${cwd}/templates/${doc_class}_extra" ]]; then
+  cp "${cwd}/templates/${doc_class}_extra"/* "${proj_dir}/"
+fi
+
 echo "Generated '${doc_class}' template in ${proj_dir}/${lower_title}.tex"
 exec ${template} "${doc_class}" "${title}" "${author}" > ${proj_dir}/${lower_title}.tex

@@ -7,7 +7,7 @@ INSTALL = install
 COPY = cp -r
 
 DESTDIR ?= /opt
-PREFIX  ?= $(DESTDIR)/textemplate
+PREFIX  ?= $(DESTDIR)/scripts
 
 PATH_EXEC = $(PREFIX)/textpl
 PATH_TEMPLATES = $(PREFIX)/templates
@@ -25,7 +25,8 @@ all:
 install:
 	$(INSTALL) -d $(PATH_TEMPLATES)
 	$(INSTALL) -m0755 $(EXEC_FILE) $(PATH_EXEC)
-	$(INSTALL) -m0755 $(TEMPLEATES_DIR)/* $(PATH_TEMPLATES)
+	$(INSTALL) -m0755 $(TEMPLEATES_DIR)/*.sh $(PATH_TEMPLATES)
+	$(COPY) $(TEMPLEATES_DIR)/*_extra $(PATH_TEMPLATES)
 
 uninstall:
 	rm -rf $(PATH_TEMPLATES)
